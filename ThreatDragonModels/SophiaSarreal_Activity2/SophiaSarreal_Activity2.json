@@ -308,11 +308,13 @@
                 "text": "SQL Database"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -409,13 +411,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "6943571e-567d-41e6-8532-9fbed3b787c9",
+                  "title": "SQL injection leading to data tampering",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 7,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -796,6 +818,10 @@
             },
             "vertices": [
               {
+                "x": 650,
+                "y": 360
+              },
+              {
                 "x": 620,
                 "y": 470
               },
@@ -887,10 +913,10 @@
             "labels": [
               "Verifies the privilege"
             ],
-            "id": "b5f45a3b-cce7-4ea3-813a-7c489359d9db",
+            "id": "e511968c-7015-4963-a2fd-841f29661fd5",
             "source": {
-              "cell": "66ceb2cd-3ed0-40b1-8d4b-4b0239508142",
-              "port": "1baced53-4a5e-49fb-88ed-7c368dbea03d"
+              "cell": "f3a0d346-dfb8-4aac-8d01-9efb9f8ee7de",
+              "port": "ff096016-0532-4124-98bd-390eb1e6b5dc"
             },
             "target": {
               "cell": "38760c08-53f7-471d-a320-4e85988d89c4",
@@ -934,27 +960,28 @@
             "labels": [
               "Data Flow"
             ],
-            "id": "75cdb990-cd45-4a97-9c75-15b8602365e8",
+            "id": "a10ca63a-aa6c-44d1-aa45-3f8b58f3ad75",
             "source": {
               "cell": "38760c08-53f7-471d-a320-4e85988d89c4",
               "port": "e545b7b3-5373-409d-8b0c-0097b5af2f87"
             },
             "target": {
-              "cell": "66ceb2cd-3ed0-40b1-8d4b-4b0239508142",
-              "port": "1baced53-4a5e-49fb-88ed-7c368dbea03d"
+              "cell": "f3a0d346-dfb8-4aac-8d01-9efb9f8ee7de",
+              "port": "ff096016-0532-4124-98bd-390eb1e6b5dc"
             },
             "vertices": [
               {
-                "x": 730,
-                "y": 350
-              },
-              {
-                "x": 650,
+                "x": 640,
                 "y": 350
               }
             ],
             "tools": {
               "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
                 "boundary",
                 "button-remove",
                 "vertices",
@@ -1112,25 +1139,25 @@
           },
           {
             "position": {
-              "x": 355,
-              "y": 265
+              "x": 353.75,
+              "y": 285
             },
             "size": {
-              "width": 110,
-              "height": 100
+              "width": 112.5,
+              "height": 60
             },
             "attrs": {
               "text": {
                 "text": "Authorization\nProvider"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
-            "shape": "process",
+            "shape": "actor",
             "ports": {
               "groups": {
                 "top": {
@@ -1197,59 +1224,34 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "da356f3f-b85b-46af-b0da-f83b280be8f7"
+                  "id": "3d051270-533d-4dd6-ae52-4436dbdbcf11"
                 },
                 {
                   "group": "right",
-                  "id": "1baced53-4a5e-49fb-88ed-7c368dbea03d"
+                  "id": "ff096016-0532-4124-98bd-390eb1e6b5dc"
                 },
                 {
                   "group": "bottom",
-                  "id": "84d2a53e-f33c-40ab-921a-ecc45759b95e"
+                  "id": "8d83c467-63fa-42c8-806f-7d63d6732211"
                 },
                 {
                   "group": "left",
-                  "id": "c4eb0da6-e12b-4b20-9c67-a59f512af650"
+                  "id": "522d73e2-a864-40bc-9c61-1549c9255055"
                 }
               ]
             },
-            "id": "66ceb2cd-3ed0-40b1-8d4b-4b0239508142",
-            "zIndex": 12,
+            "id": "f3a0d346-dfb8-4aac-8d01-9efb9f8ee7de",
+            "zIndex": 13,
             "data": {
-              "type": "tm.Process",
+              "type": "tm.Actor",
               "name": "Authorization\nProvider",
               "description": "",
-              "outOfScope": false,
               "isTrustBoundary": false,
+              "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
-              "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
-              "isWebApplication": false,
-              "privilegeLevel": "",
-              "threats": [
-                {
-                  "id": "81d4e393-2383-4e64-8736-860cb6612ed6",
-                  "title": "Elevation of privilege",
-                  "status": "Open",
-                  "severity": "TBD",
-                  "type": "Elevation of privilege",
-                  "description": "Elevation of privilege",
-                  "mitigation": "",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 6,
-                  "score": ""
-                }
-              ],
-              "threatFrequency": {
-                "spoofing": 0,
-                "tampering": 0,
-                "repudiation": 0,
-                "informationDisclosure": 0,
-                "denialOfService": 0,
-                "elevationOfPrivilege": 1
-              }
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
             }
           }
         ]
@@ -1257,6 +1259,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 6
+    "threatTop": 7
   }
 }
