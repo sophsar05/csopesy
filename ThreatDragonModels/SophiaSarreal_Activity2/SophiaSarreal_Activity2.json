@@ -632,7 +632,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "User is authenticated",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -646,7 +646,7 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "User is authenticated"
             ],
             "id": "d27faf7b-9138-4409-a317-b797f3bcb555",
             "source": {
