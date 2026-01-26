@@ -20,7 +20,7 @@
           {
             "position": {
               "x": 345,
-              "y": 595
+              "y": 600
             },
             "size": {
               "width": 130,
@@ -139,7 +139,7 @@
                   "id": "0ad1e310-16e1-4ce8-be2b-d1cac7944541",
                   "title": "Spoofing",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Spoofing",
                   "description": "Spoofing",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
@@ -147,15 +147,67 @@
                   "new": false,
                   "number": 4,
                   "score": ""
+                },
+                {
+                  "id": "f29367fb-ee4d-4382-bd8b-a3671c40b168",
+                  "title": "Tampering",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 8,
+                  "score": ""
+                },
+                {
+                  "id": "7e67fd0c-4335-4fc5-a000-3e25ee4e40bd",
+                  "title": "Repudiation",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                },
+                {
+                  "id": "a692bdf8-97c6-46be-bef3-676f39415566",
+                  "title": "Information disclosure",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                },
+                {
+                  "id": "c99f7d13-7152-416f-b64a-de90c07d4d99",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Elevation of privilege",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "spoofing": 2,
-                "tampering": 0,
-                "repudiation": 0,
-                "informationDisclosure": 0,
+                "spoofing": 4,
+                "tampering": 3,
+                "repudiation": 3,
+                "informationDisclosure": 3,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 2
               }
             }
           },
@@ -278,10 +330,10 @@
                   "id": "280e3052-b9d5-4960-987d-abc84e16ceec",
                   "title": "Spoofing",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "Spoofing",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Attacker may impersonate a legitimate user to gain unauthorized access to the system",
+                  "mitigation": "Strong authentication and secure session management",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 1,
@@ -289,9 +341,16 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 2,
+                "spoofing": 4,
                 "repudiation": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -430,12 +489,25 @@
                   "new": false,
                   "number": 7,
                   "score": ""
+                },
+                {
+                  "id": "d5c39eb1-e8da-49bc-a4d1-2bec97b9fdb8",
+                  "title": "Unauthorized database data access",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 3,
                 "repudiation": 0,
-                "informationDisclosure": 0,
+                "informationDisclosure": 3,
                 "denialOfService": 0
               }
             }
@@ -944,7 +1016,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
+              "name": "Auth\nVerification",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -958,9 +1030,113 @@
               "trustBoundaryIds": []
             },
             "labels": [
-              "Data Flow"
+              "Auth\nVerification"
             ],
-            "id": "a10ca63a-aa6c-44d1-aa45-3f8b58f3ad75",
+            "id": "653af683-4951-4866-b934-bd58b2e2aca7",
+            "source": {
+              "cell": "b2e31494-a38b-4c29-ad71-73a47fba1b6d",
+              "port": "be39ae21-c3e0-4c3d-b4e1-1a7f356633f1"
+            },
+            "target": {
+              "cell": "f3a0d346-dfb8-4aac-8d01-9efb9f8ee7de",
+              "port": "8d83c467-63fa-42c8-806f-7d63d6732211"
+            },
+            "vertices": [
+              {
+                "x": 450,
+                "y": 460
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Verified",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Verified"
+            ],
+            "id": "e2d583c9-5659-4457-832d-d41f13a682b3",
+            "source": {
+              "cell": "f3a0d346-dfb8-4aac-8d01-9efb9f8ee7de",
+              "port": "8d83c467-63fa-42c8-806f-7d63d6732211"
+            },
+            "target": {
+              "cell": "b2e31494-a38b-4c29-ad71-73a47fba1b6d",
+              "port": "be39ae21-c3e0-4c3d-b4e1-1a7f356633f1"
+            },
+            "vertices": [
+              {
+                "x": 370,
+                "y": 470
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Verified",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Verified"
+            ],
+            "id": "9b4cfff8-76de-4eb4-93d1-ba21406f9bb7",
             "source": {
               "cell": "38760c08-53f7-471d-a320-4e85988d89c4",
               "port": "e545b7b3-5373-409d-8b0c-0097b5af2f87"
@@ -974,22 +1150,7 @@
                 "x": 640,
                 "y": 350
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
@@ -1118,7 +1279,7 @@
                 {
                   "id": "6afdcf46-65e0-4e23-a7d9-692190fe2e34",
                   "title": "Tampering with the data using the SQL injection attack",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "TBD",
                   "type": "Tampering",
                   "description": "Tampering with the data using the SQL injection attack",
@@ -1127,12 +1288,25 @@
                   "new": false,
                   "number": 5,
                   "score": ""
+                },
+                {
+                  "id": "d7dfe595-6e1b-4364-b5bc-04ee41bd1a6e",
+                  "title": "Unauthorized access to directory information",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 3,
                 "repudiation": 0,
-                "informationDisclosure": 0,
+                "informationDisclosure": 1,
                 "denialOfService": 0
               }
             }
@@ -1151,8 +1325,8 @@
                 "text": "Authorization\nProvider"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1249,9 +1423,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "7a2feb96-d79f-4157-99a1-fd0fe2241993",
+                  "title": "Authorization provider spoofing",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "attacker may impersonate authorization provide or forge authentication",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "repudiation": 0
+              }
             }
           }
         ]
@@ -1259,6 +1451,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 7
+    "threatTop": 15
   }
 }
