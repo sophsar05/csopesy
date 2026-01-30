@@ -137,11 +137,11 @@
               "threats": [
                 {
                   "id": "0ad1e310-16e1-4ce8-be2b-d1cac7944541",
-                  "title": "Spoofing",
+                  "title": "Web Application Spoofing",
                   "status": "Open",
                   "severity": "High",
                   "type": "Spoofing",
-                  "description": "Spoofing",
+                  "description": "The web application may be spoofed by an attacker and this may lead to unauthorized access to the browser client.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -149,65 +149,26 @@
                   "score": ""
                 },
                 {
-                  "id": "f29367fb-ee4d-4382-bd8b-a3671c40b168",
-                  "title": "Tampering",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Tampering",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 8,
-                  "score": ""
-                },
-                {
                   "id": "7e67fd0c-4335-4fc5-a000-3e25ee4e40bd",
-                  "title": "Repudiation",
+                  "title": "Missing Web Application Logging\t",
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Repudiation",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "The web application claims that it did not receive data from a process on the other side of the trust boundary.\t",
+                  "mitigation": "Consider using logging or auditing to record the source, time and a summary of the received data.\t",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 9,
                   "score": ""
-                },
-                {
-                  "id": "a692bdf8-97c6-46be-bef3-676f39415566",
-                  "title": "Information disclosure",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 10,
-                  "score": ""
-                },
-                {
-                  "id": "c99f7d13-7152-416f-b64a-de90c07d4d99",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Elevation of privilege",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 11,
-                  "score": ""
                 }
               ],
               "threatFrequency": {
-                "spoofing": 4,
-                "tampering": 3,
-                "repudiation": 3,
-                "informationDisclosure": 3,
+                "spoofing": 5,
+                "tampering": 2,
+                "repudiation": 4,
+                "informationDisclosure": 2,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 2
+                "elevationOfPrivilege": 1
               }
             }
           },
@@ -344,13 +305,6 @@
                 "spoofing": 4,
                 "repudiation": 0
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -478,36 +432,36 @@
               "storesInventory": false,
               "threats": [
                 {
-                  "id": "6943571e-567d-41e6-8532-9fbed3b787c9",
-                  "title": "SQL injection leading to data tampering",
+                  "id": "5e3c33bc-05bb-4611-ae7b-3e4efa682c58",
+                  "title": "Malicious SQL Code Injection",
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Tampering",
-                  "description": "",
-                  "mitigation": "",
+                  "description": "SQL injection is an attack in which malicious code is\ninserted into strings that are later passed to an\ninstance of SQL Server for parsing and execution.",
+                  "mitigation": "Provide remediation for this threat or\na reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 7,
+                  "number": 20,
                   "score": ""
                 },
                 {
-                  "id": "d5c39eb1-e8da-49bc-a4d1-2bec97b9fdb8",
-                  "title": "Unauthorized database data access",
+                  "id": "80def776-cbfe-4322-9fde-cd9b78e6779b",
+                  "title": "Unverified SQL Database Data Writes",
                   "status": "Open",
                   "severity": "TBD",
-                  "type": "Information disclosure",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "type": "Repudiation",
+                  "description": "The SQL Database claims that it did not write data\nreceived from an entity on the other side of the trust\nboundary.",
+                  "mitigation": "Consider using logging or auditing to\nrecord the source, time and a\nsummary of the received data.",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 14,
+                  "number": 21,
                   "score": ""
                 }
               ],
               "threatFrequency": {
                 "tampering": 3,
-                "repudiation": 0,
-                "informationDisclosure": 3,
+                "repudiation": 1,
+                "informationDisclosure": 2,
                 "denialOfService": 0
               }
             }
@@ -557,16 +511,7 @@
               "cell": "94b60aa9-6191-42d9-8d0d-f5631899c3bc",
               "port": "c16d5b6e-04f2-4cb2-bba1-8bb4283597f3"
             },
-            "vertices": [
-              {
-                "x": 560,
-                "y": 660
-              },
-              {
-                "x": 670,
-                "y": 660
-              }
-            ]
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1277,35 +1222,48 @@
               "storesInventory": false,
               "threats": [
                 {
-                  "id": "6afdcf46-65e0-4e23-a7d9-692190fe2e34",
-                  "title": "Tampering with the data using the SQL injection attack",
-                  "status": "Mitigated",
-                  "severity": "TBD",
-                  "type": "Tampering",
-                  "description": "Tampering with the data using the SQL injection attack",
-                  "mitigation": "",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 5,
-                  "score": ""
-                },
-                {
-                  "id": "d7dfe595-6e1b-4364-b5bc-04ee41bd1a6e",
-                  "title": "Unauthorized access to directory information",
+                  "id": "d702969b-e137-455b-b0fc-d1b6bc52640e",
+                  "title": "LDAP Injection",
                   "status": "Open",
                   "severity": "TBD",
-                  "type": "Information disclosure",
-                  "description": "Provide a description for this threat",
+                  "type": "Tampering",
+                  "description": "LDAP injection is possible, as the user\nauthentication is verified using an LDAP\nquery.",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 15,
+                  "number": 17,
+                  "score": ""
+                },
+                {
+                  "id": "9c5300f1-77e1-471d-84d5-7409b6c5bfcf",
+                  "title": "Missing LDAP Write Logging",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "LDAP claims that it did not write data\nreceived from an entity on the other side\nof the trust boundary.",
+                  "mitigation": "Consider using logging or auditing to\nrecord the source, time and a summary\nof the received data.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 18,
+                  "score": ""
+                },
+                {
+                  "id": "481b467e-35d6-4cac-8574-e4144b2386fc",
+                  "title": "Unauthorized Data Access in LDAP Directory",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "Improper data protection of LDAP can\nallow an attacker to read information not\nintended for disclosure",
+                  "mitigation": "Review authorization settings.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 19,
                   "score": ""
                 }
               ],
               "threatFrequency": {
                 "tampering": 3,
-                "repudiation": 0,
+                "repudiation": 1,
                 "informationDisclosure": 1,
                 "denialOfService": 0
               }
@@ -1325,8 +1283,8 @@
                 "text": "Authorization\nProvider"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1423,12 +1381,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "0df9b891-6e0b-4d76-8663-8b047b14ca33",
+                  "title": "Elevation of privilege",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           }
         ]
@@ -1436,6 +1416,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 15
+    "threatTop": 21
   }
 }
